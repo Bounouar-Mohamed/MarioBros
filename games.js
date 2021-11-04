@@ -26,13 +26,15 @@ document.addEventListener('keypress', function(e) {
  {     
              verif();                   
                if ( posLeft > 375)  {
-             left(posLeft);            
+             left(posLeft),
+             refresch ();
              break;
  }}
              case 100:
  {
                if ( posLeft < 1010)  {
-             right(posLeft);            
+             right(posLeft),
+             refresch ();            
              break;
  }}
              case 122:
@@ -57,12 +59,14 @@ document.addEventListener('keypress', function(e) {
                     
                   clearInterval(moove);
                 }} , 60);      
+                refresch ()
              break;
  }}
              case 115:
  {
                if (posTop < 600)  {
-             down(posTop);
+             down(posTop),
+             refresch ();
              break;
  }}
  }});
