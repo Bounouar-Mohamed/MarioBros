@@ -1,0 +1,61 @@
+#compteur{
+margin-top: -20em;
+}
+
+
+#jeu{
+  background-image: url(sky.jpg);
+  background-repeat: no-repeat;
+}
+
+
+#goomba {
+    margin: 0 auto;
+    width: 35px; 
+    height: 35px; 
+    background-image: url(goomba.png);
+    background-size: 35px 35px;
+    margin-top:-7em;
+    background-repeat: no-repeat;
+    position:relative;
+    animation-duration: 5s;
+    animation-name: slidein;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 40%;
+  }
+  to {
+    margin-left: 26%;
+  }
+}
+
+
+
+#mario {
+    margin: 0 auto;
+    width: 60px; 
+    height: 60px;
+    background-image: url(mario.png);
+    background-repeat: no-repeat;
+    background-size: 50px 60px;
+    margin-top:-3.7em;
+    position: relative;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    
+}
+
+#rectangle {
+    position: relative;
+    width:700px;
+    height:600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5em;
+    border:2px solid rgb(14, 3, 3);
+}
+
