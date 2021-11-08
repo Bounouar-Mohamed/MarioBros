@@ -41,8 +41,8 @@ document.addEventListener('keypress', function(e) {
  {
                if ( posTop > 500) {               
                
-                  var testDiv = document.getElementById("mario");
-                  var marginTop = -60;
+                  let testDiv = document.getElementById("mario");
+                  let marginTop = -60;
               
                 const moove = setInterval(() => {
 
@@ -136,11 +136,3 @@ document.getElementById('heure_exacte').innerHTML = ' ' + affichZero(infos.getHo
   window.onload = function() {
   setInterval("dateEtHeure()", 100);
 };
-
-
-
-
-
-
-
-
