@@ -16,9 +16,9 @@ document.getElementById('mario').style.marginTop  =(posTop-650)+"px";
 document.addEventListener('keypress', function(e) {
 
 
-     var posLeft = document.getElementById('mario').offsetLeft;
-     var posTop = document.getElementById('mario').offsetTop;
-     var event = e || window.event;
+     let posLeft = document.getElementById('mario').offsetLeft;
+     let posTop = document.getElementById('mario').offsetTop;
+     let event = e || window.event;
 
        switch (event.keyCode) {
  
@@ -73,11 +73,11 @@ document.addEventListener('keypress', function(e) {
 
 function Collision() {
 
-  var testDiv = document.getElementById("mario");
-  var testDiv2 = document.getElementById("goomba");
-  var x = testDiv.offsetLeft;
-  var x2 = testDiv2.offsetLeft;
-  var w2 = testDiv2.offsetWidth;
+  let testDiv = document.getElementById("mario");
+  let testDiv2 = document.getElementById("goomba");
+  let x = testDiv.offsetLeft;
+  let x2 = testDiv2.offsetLeft;
+  let w2 = testDiv2.offsetWidth;
  
   if( x < x2+w2) {
     return(true);
@@ -92,7 +92,7 @@ function verif() {
    alert("GameOver!!");
   }}
 
-var i = 0;
+let i = 0;
 onkeydown = detectKeypress;
 function detectKeypress(c) {
 
@@ -106,7 +106,7 @@ function result(val) {
 }
 
 function buttonClickGET() {
-  var url = "https://api.openweathermap.org/data/2.5/weather?q=Marseille,fr&appid=c21a75b667d6f7abb81f118dcf8d4611&units=metric"
+  let url = "https://api.openweathermap.org/data/2.5/weather?q=Marseille,fr&appid=c21a75b667d6f7abb81f118dcf8d4611&units=metric"
 
   $.get(url, callBackGetSuccess).done(function() {
       //alert( "second success" );
@@ -118,8 +118,8 @@ function buttonClickGET() {
       //alert( "finished" );
     });
 }
-var callBackGetSuccess = function(data) {
-  var element = document.getElementById("zone_meteo");
+let callBackGetSuccess = function(data) {
+  let element = document.getElementById("zone_meteo");
   element.innerHTML = "La temperature est de " +  data.main.temp ;
 }
 
