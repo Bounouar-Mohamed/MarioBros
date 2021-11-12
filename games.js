@@ -135,4 +135,49 @@ document.getElementById('heure_exacte').innerHTML = ' ' + affichZero(infos.getHo
 
   window.onload = function() {
   setInterval("dateEtHeure()", 100);
+
 };
+
+
+
+let myHeaders = new Headers();
+myHeaders.append('Accept-Encoding', 'br');
+
+let myInit = {    method: 'GET',
+                  headers: myHeaders,
+                  mode: 'cross-origin',
+                  cache: 'default'
+};
+
+fetch('http://localhost:3000/users')
+      .then(res => res.json())
+      .then(data => console.log(data))
+      .catch(e => console.log(e) )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+function personnages (name, height, weight) {
+  document.getElementById('id');
+    this.name = name;
+    this.height = height;
+    this.weight = weight;
+  }
+  
+  var div1st = personnages ('mario');
+  var div2nd = personnages ('goomba');
+  var div1st = new StyleDiv('mario');
+  var div2nd = new StyleDiv('goomba');
+
+  */
