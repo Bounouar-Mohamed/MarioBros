@@ -157,27 +157,17 @@ fetch('http://localhost:3000/users')
 
 
 
-
-
-
-
-
-
-
-
-
-
-/*
-function personnages (name, height, weight) {
-  document.getElementById('id');
+class Personnage {
+        constructor(name, height, weight) {
+    
     this.name = name;
     this.height = height;
     this.weight = weight;
-  }
+  }}
   
-  var div1st = personnages ('mario');
-  var div2nd = personnages ('goomba');
-  var div1st = new StyleDiv('mario');
-  var div2nd = new StyleDiv('goomba');
+  let mario = new Personnage ('Mario: ', '60px', '60px');
+  let goomba = new Personnage ('Goomba: ', '35px', '35px');
 
-  */
+  console.log(mario.name +" "+mario.height+", "+mario.weight),
+  console.log(goomba.name +" "+goomba.height+", "+goomba.weight);
+  
