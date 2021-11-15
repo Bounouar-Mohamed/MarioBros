@@ -168,6 +168,29 @@ class Personnage {
   let mario = new Personnage ('Mario: ', '60px', '60px');
   let goomba = new Personnage ('Goomba: ', '35px', '35px');
 
-  console.log(mario.name +" "+mario.height+", "+mario.weight),
-  console.log(goomba.name +" "+goomba.height+", "+goomba.weight);
-  
+  let marioo = (mario.name + mario.height+", "+mario.weight);
+  let goombaa =(goomba.name + goomba.height+", "+goomba.weight);
+
+
+  console.log(marioo),
+  console.log(goombaa);
+
+
+  fetch ( 'http://localhost:3000/data' , {
+    method:"POST", 
+    body: JSON.stringify({data: marioo +" "+ goombaa}),
+
+    headers : {
+       'Content-Type' : 'application/json' ,
+       'Accept' : 'application/json' 
+  } 
+
+  }).then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+    console.log(data);
+  })
+  .catch(function(err) {  
+    console.log('Fetch Error :' + err);  
+  });
