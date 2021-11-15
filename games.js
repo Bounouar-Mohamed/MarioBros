@@ -80,17 +80,18 @@ function Collision() {
   let w2 = testDiv2.offsetWidth;
  
   if( x < x2+w2) {
-    return(true);
+    return true;
   }
 
   if( x != x2+w2 )  {
-  return(false);
+  return false;
   }}
 
 function verif() {
+
   if (Collision() === true)  {
    alert("GameOver!!");
-  }}
+}}
 
 let i = 0;
 onkeydown = detectKeypress;
@@ -99,8 +100,8 @@ function detectKeypress(c) {
     c = c || window.event;
     if (c.keyCode == '90'){      
     result(++i);
-      }
-}
+}}
+
 function result(val) {
   document.getElementById("compteur").innerHTML = val;
 }
@@ -110,14 +111,15 @@ function buttonClickGET() {
 
   $.get(url, callBackGetSuccess).done(function() {
       //alert( "second success" );
-    })
+})
     .fail(function() {
       alert( "error" );
-    })
+})
     .always(function() {
       //alert( "finished" );
-    });
+});
 }
+
 let callBackGetSuccess = function(data) {
   let element = document.getElementById("zone_meteo");
   element.innerHTML = "La temperature est de " +  data.main.temp ;
@@ -133,11 +135,10 @@ function dateEtHeure() {
 document.getElementById('heure_exacte').innerHTML = ' ' + affichZero(infos.getHours()) + ':' + affichZero(infos.getMinutes());
 }
 
-  window.onload = function() {
-  setInterval("dateEtHeure()", 100);
+window.onload = function dateEtHeure() {
+  setInterval("dateEtHeure()", );
 
 };
-
 
 
 let myHeaders = new Headers();
@@ -163,7 +164,7 @@ class Personnage {
     this.name = name;
     this.height = height;
     this.weight = weight;
-  }}
+}}
   
   let mario = new Personnage ('Mario: ', '60px', '60px');
   let goomba = new Personnage ('Goomba: ', '35px', '35px');
@@ -172,25 +173,48 @@ class Personnage {
   let goombaa =(goomba.name + goomba.height+", "+goomba.weight);
 
 
-  console.log(marioo),
+ /* console.log(marioo),
   console.log(goombaa);
+*/
+
+class KeyLettre {
+        constructor(keyCode , key) {
+
+    this.keyCode = keyCode;
+    this.key = key;
+}}
 
 
-  fetch ( 'http://localhost:3000/data' , {
+let ResultKey;
+window.document.addEventListener("keydown", function ShowEvent (e)  {
+  
+  lettre = new KeyLettre (e.keyCode,e.key);
+
+  ResultKey = "KeyCode:"+lettre.keyCode+" Lettre:"+lettre.key;
+
+  console.log(ResultKey);
+
+})
+
+
+fetch ( 'http://localhost:3000/users' , {
     method:"POST", 
-    body: JSON.stringify({data: marioo +" "+ goombaa}),
+    body: JSON.stringify({data: marioo +" | "+ goombaa+" | "+ResultKey}),
 
     headers : {
        'Content-Type' : 'application/json' ,
        'Accept' : 'application/json' 
-  } 
+}
+})
 
-  }).then((response) => {
+  .then((response) => {
     return response.json();
-  })
-  .then((data) => {
+})
+
+  .then((data) => {    
     console.log(data);
   })
+
   .catch(function(err) {  
     console.log('Fetch Error :' + err);  
-  });
+});
