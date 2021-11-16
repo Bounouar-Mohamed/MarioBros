@@ -132,7 +132,8 @@ function affichZero(nombre) {
 function dateEtHeure() {   
   const infos = new Date();
   
-document.getElementById('heure_exacte').innerHTML = ' ' + affichZero(infos.getHours()) + ':' + affichZero(infos.getMinutes());
+    document.getElementById('heure_exacte').innerHTML =  meteo ;
+   meteo = ' ' + affichZero(infos.getHours()) + ':' + affichZero(infos.getMinutes());
 }
 
 window.onload = function dateEtHeure() {
@@ -170,7 +171,7 @@ class Personnage {
   let goomba = new Personnage ('Goomba: ', '35px', '35px');
 
   let marioo = (mario.name + mario.height+", "+mario.weight);
-  let goombaa =(goomba.name + goomba.height+", "+goomba.weight);
+  let goombaa = (goomba.name + goomba.height+", "+goomba.weight);
 
 
  /* console.log(marioo),
@@ -186,35 +187,34 @@ class KeyLettre {
 
 
 let ResultKey;
+
 window.document.addEventListener("keydown", function ShowEvent (e)  {
   
   lettre = new KeyLettre (e.keyCode,e.key);
 
-  ResultKey = "KeyCode:"+lettre.keyCode+" Lettre:"+lettre.key;
+  ResultKey = "KeyCode: "+lettre.keyCode+" Lettre: "+lettre.key;
 
-  console.log(ResultKey);
-
-})
-
-
+  
 fetch ( 'http://localhost:3000/users' , {
     method:"POST", 
-    body: JSON.stringify({data: marioo +" | "+ goombaa+" | "+ResultKey}),
+    body: JSON.stringify({data: marioo +" | "+ goombaa+" | "+ResultKey +" | "+meteo }),
 
     headers : {
        'Content-Type' : 'application/json' ,
        'Accept' : 'application/json' 
 }
 })
+})
 
-  .then((response) => {
+.then((response) => {
     return response.json();
 })
 
-  .then((data) => {    
+.then((data) => {
     console.log(data);
-  })
+})
 
-  .catch(function(err) {  
-    console.log('Fetch Error :' + err);  
+
+.catch(function(err) {  
+      console.log('Fetch Error :' + err);  
 });
